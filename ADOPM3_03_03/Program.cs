@@ -12,13 +12,12 @@ namespace ADOPM3_03_03
             {
                 Action[] actions = new Action[3];
                 
-                
                 for (int i = 0; i < 3; i++)
                     actions[i] = () => Console.Write(i);    // "i" is not yet evaluated
 
                 foreach (Action a in actions) a();     // 333 because i is evaluated as LE is invoked 
             }
-
+            
             // The solution, if we want to write 012, is to assign the iteration variable to a local
             // variable that’s scoped inside the loop:
             {
@@ -32,6 +31,7 @@ namespace ADOPM3_03_03
 
                 foreach (Action a in actions) a();     // 012
             }
+            
         }
     }
     //Exercises:
